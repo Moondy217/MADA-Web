@@ -5,7 +5,6 @@
  * 상황: 프로젝트에서 다양한 페이지에 재사용 가능한 버튼을 만들기 위해 개발
  */
 
-
 interface ButtonProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';

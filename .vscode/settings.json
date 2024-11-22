@@ -41,7 +41,7 @@
       "code": ":memo:",
       "description": "문서 수정"
     },
-    { 
+    {
       "emoji": "Test : ",
       "code": ":test_tube:",
       "description": "테스트 추가, 테스트 리팩토링 (프로덕션 코드 변경 X)"

@@ -13,12 +13,8 @@ export default {
         bottomButton: 5000,
         backdrop: 9999,
       },
-
       colors: {
-        accent: '#3E85FF',
-        positive: '#3BD42D',
-        error: '#EA4335',
-
+        main: '#89A9D9',
         Gray: {
           0: '#fff',
           100: '#f9f9f9',
@@ -32,7 +28,6 @@ export default {
           900: '#000',
         },
       },
-
       fontSize: {
         10: '11px',
         11: '11px',
@@ -42,16 +37,14 @@ export default {
         18: '18px',
         20: '20px',
       },
-
       lineHeight: {
         120: '1.2',
         130: '1.3',
         140: '1.4',
         150: '1.5',
       },
-
       spacing: {
-        headerHeigth: '48px',
+        headerHeigth: '90px',
       },
     },
   },
