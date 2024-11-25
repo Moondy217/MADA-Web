@@ -6,33 +6,51 @@ interface SideProps {
   serviceClick?: () => void;
 }
 
-export default function Side({ isMenu, serviceClick }: SideProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Side({ serviceClick }: SideProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+    setIsExpanded(!isExpanded);
     serviceClick?.();
   };
 
   return (
-    <>
-      <button
-        onClick={toggleSidebar}
-        className="fixed top-5 left-5 z-50 p-2 hover:bg-gray-100 rounded-full"
-      >
-        <MenuIcon />
-      </button>
+    <aside
+      className={`
+        fixed top-0 left-0 
+        h-screen 
+        bg-main 
+        shadow-lg
+        transition-all duration-300 ease-in-out
+        ${isExpanded ? 'w-60' : 'w-20'}
+      `}
+    >
+      <div className="flex h-20 items-center justify-between">
+        <button
+          onClick={toggleSidebar}
+          className={`
+            p-2 rounded-full transition-all duration-300
+            ${isExpanded ? 'ml-48' : 'ml-4'}
+          `}
+        >
+          <MenuIcon />
+        </button>
+      </div>
 
-      <aside
-        className={`fixed top-0 left-0 h-screen w-20 bg-main border-r border-[rgba(249,249,249,0.8)] 
-        transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+      {/* 사이드바 내용 */}
+      <div
+        className={`
+          overflow-hidden transition-all duration-300
+          ${isExpanded ? 'opacity-100 visible' : 'opacity-0 invisible'}
+          px-4
+        `}
       >
-        <div className="w-full h-headerHeigth flex justify-center items-center border-b border-[rgba(249, 249, 249, 0.8)]">
-          {isMenu && <div className="p-4">{/* 사이드바 내용 */}</div>}
+        <div className="space-y-4">
+          <div>메뉴 항목 1</div>
+          <div>메뉴 항목 2</div>
+          <div>메뉴 항목 3</div>
         </div>
-      </aside>
-    </>
+      </div>
+    </aside>
   );
 }

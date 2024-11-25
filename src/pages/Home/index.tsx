@@ -9,7 +9,6 @@ export default function HomePage() {
     <>
       <Header title="HOME" />
       <div className="gap-3 flex flex-col justify-center items-center w-full h-[calc(100%-96px)]">
-        메인 페이지
         <Side isMenu={true} serviceClick={() => setIsSidebarOpen(!isSidebarOpen)} />
       </div>
     </>
